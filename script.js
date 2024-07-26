@@ -1,3 +1,6 @@
+let computerScore=0;
+let humanScore=0;
+
 function getComputerChoice(){
     let random, computerChoice;
     random = Math.floor(Math.random()*3);
