@@ -19,3 +19,47 @@ function getHumanChoice(){
     }
     return humanChoice;
 }
+
+function playRound(humanChoice, computerChoice){
+    if(humanChoice=="rock"){
+        if(computerChoice=="scissors"){
+            console.log("You win! "+humanChoice+" beats "+computerChoice);
+            humanScore++;
+        }
+        else if(computerChoice=="paper"){
+            console.log("You lose! "+computerChoice+" beats "+humanChoice);
+            computerScore++;
+        }
+        else if(computerChoice=="rock"){
+            console.log("Draw! "+humanChoice+" and "+computerChoice);
+        }
+    }
+    else if(humanChoice=="paper"){
+        if(computerChoice=="rock"){
+            console.log("You win "+humanChoice+" beats "+computerChoice);
+            humanScore++;
+        }
+        else if(computerChoice=="scissors"){
+            console.log("You lose! "+computerChoice+" beats "+humanChoice);
+            computerScore++;
+        }
+        else if(computerChoice=="paper"){
+            console.log("Draw! "+humanChoice+" and "+computerChoice);
+        }
+    }
+    else if(humanChoice=="scissors"){
+        if(computerChoice=="paper"){
+            console.log("You win "+humanChoice+" beats "+computerChoice);
+            humanScore++;
+        }
+        else if(computerChoice=="rock"){
+            console.log("You lose! "+computerChoice+" beats "+humanChoice);
+            computerScore++;
+        }
+        else if(computerChoice=="scissors"){
+            console.log("Draw! "+humanChoice+" and "+computerChoice);
+        }
+    }
+}
+
+playRound(getHumanChoice(),getComputerChoice());
