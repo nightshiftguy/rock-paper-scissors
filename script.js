@@ -63,19 +63,19 @@ function playGame(){
             }
         }
     }
-    for(var i=0; i<5; i++){
-        playRound(getHumanChoice(),getComputerChoice());
-    }
-    if(humanScore>computerScore){
-        console.log("You won the game!");
-    }
-    else if(computerScore>humanScore){
-        console.log("You lose the game!");
-    }
-    else{
-        console.log("Game ended as draw!");
-    }
-    console.log("Your score:"+humanScore+" Computer score: "+computerScore);
+    // for(var i=0; i<5; i++){
+    //     playRound(getHumanChoice(),getComputerChoice());
+    // }
+    // if(humanScore>computerScore){
+    //     console.log("You won the game!");
+    // }
+    // else if(computerScore>humanScore){
+    //     console.log("You lose the game!");
+    // }
+    // else{
+    //     console.log("Game ended as draw!");
+    // }
+    // console.log("Your score:"+humanScore+" Computer score: "+computerScore);
 }
 
 playGame();
