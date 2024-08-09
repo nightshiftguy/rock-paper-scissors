@@ -16,6 +16,8 @@ function getHumanChoice(){
     }
     return humanChoice;
 }
+
+let divResult = document.querySelector("#results");
     
 let computerScore=0;
 let humanScore=0;
@@ -23,54 +25,54 @@ let humanScore=0;
 function playRound(humanChoice, computerChoice){
     if(humanChoice=="rock"){
         if(computerChoice=="scissors"){
-            console.log("You win! "+humanChoice+" beats "+computerChoice);
+            divResult.textContent = "You win! "+humanChoice+" beats "+computerChoice;
             humanScore++;
         }
         else if(computerChoice=="paper"){
-            console.log("You lose! "+computerChoice+" beats "+humanChoice);
+            divResult.textContent = "You lose! "+computerChoice+" beats "+humanChoice;
             computerScore++;
         }
         else if(computerChoice=="rock"){
-            console.log("Draw! "+humanChoice+" and "+computerChoice);
+            divResult.textContent = "Draw! "+humanChoice+" and "+computerChoice;
         }
     }
     else if(humanChoice=="paper"){
         if(computerChoice=="rock"){
-            console.log("You win "+humanChoice+" beats "+computerChoice);
+            divResult.textContent = "You win "+humanChoice+" beats "+computerChoice;
             humanScore++;
         }
         else if(computerChoice=="scissors"){
-            console.log("You lose! "+computerChoice+" beats "+humanChoice);
+            divResult.textContent = "You lose! "+computerChoice+" beats "+humanChoice;
             computerScore++;
         }
         else if(computerChoice=="paper"){
-            console.log("Draw! "+humanChoice+" and "+computerChoice);
+            divResult.textContent = "Draw! "+humanChoice+" and "+computerChoice;
         }
     }
     else if(humanChoice=="scissors"){
         if(computerChoice=="paper"){
-            console.log("You win "+humanChoice+" beats "+computerChoice);
+            divResult.textContent = "You win "+humanChoice+" beats "+computerChoice;
             humanScore++;
         }
         else if(computerChoice=="rock"){
-            console.log("You lose! "+computerChoice+" beats "+humanChoice);
+            divResult.textContent = "You lose! "+computerChoice+" beats "+humanChoice;
             computerScore++;
         }
         else if(computerChoice=="scissors"){
-            console.log("Draw! "+humanChoice+" and "+computerChoice);
+            divResult.textContent = "Draw! "+humanChoice+" and "+computerChoice;
         }
     }
 }
     // if(humanScore>computerScore){
-    //     console.log("You won the game!");
+    //     divResult.textContent = "You won the game!");
     // }
     // else if(computerScore>humanScore){
-    //     console.log("You lose the game!");
+    //     divResult.textContent = "You lose the game!");
     // }
     // else{
-    //     console.log("Game ended as draw!");
+    //     divResult.textContent = "Game ended as draw!");
     // }
-    // console.log("Your score:"+humanScore+" Computer score: "+computerScore);
+    // divResult.textContent = "Your score:"+humanScore+" Computer score: "+computerScore);
 
 let btnRock = document.querySelector("#rock");
 let btnPaper = document.querySelector("#paper");
