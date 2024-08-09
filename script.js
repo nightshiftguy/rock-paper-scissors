@@ -16,56 +16,51 @@ function getHumanChoice(){
     }
     return humanChoice;
 }
-
-function playGame(){
     
-    let computerScore=0;
-    let humanScore=0;
+let computerScore=0;
+let humanScore=0;
 
-    function playRound(humanChoice, computerChoice){
-        if(humanChoice=="rock"){
-            if(computerChoice=="scissors"){
-                console.log("You win! "+humanChoice+" beats "+computerChoice);
-                humanScore++;
-            }
-            else if(computerChoice=="paper"){
-                console.log("You lose! "+computerChoice+" beats "+humanChoice);
-                computerScore++;
-            }
-            else if(computerChoice=="rock"){
-                console.log("Draw! "+humanChoice+" and "+computerChoice);
-            }
+function playRound(humanChoice, computerChoice){
+    if(humanChoice=="rock"){
+        if(computerChoice=="scissors"){
+            console.log("You win! "+humanChoice+" beats "+computerChoice);
+            humanScore++;
         }
-        else if(humanChoice=="paper"){
-            if(computerChoice=="rock"){
-                console.log("You win "+humanChoice+" beats "+computerChoice);
-                humanScore++;
-            }
-            else if(computerChoice=="scissors"){
-                console.log("You lose! "+computerChoice+" beats "+humanChoice);
-                computerScore++;
-            }
-            else if(computerChoice=="paper"){
-                console.log("Draw! "+humanChoice+" and "+computerChoice);
-            }
+        else if(computerChoice=="paper"){
+            console.log("You lose! "+computerChoice+" beats "+humanChoice);
+            computerScore++;
         }
-        else if(humanChoice=="scissors"){
-            if(computerChoice=="paper"){
-                console.log("You win "+humanChoice+" beats "+computerChoice);
-                humanScore++;
-            }
-            else if(computerChoice=="rock"){
-                console.log("You lose! "+computerChoice+" beats "+humanChoice);
-                computerScore++;
-            }
-            else if(computerChoice=="scissors"){
-                console.log("Draw! "+humanChoice+" and "+computerChoice);
-            }
+        else if(computerChoice=="rock"){
+            console.log("Draw! "+humanChoice+" and "+computerChoice);
         }
     }
-    // for(var i=0; i<5; i++){
-    //     playRound(getHumanChoice(),getComputerChoice());
-    // }
+    else if(humanChoice=="paper"){
+        if(computerChoice=="rock"){
+            console.log("You win "+humanChoice+" beats "+computerChoice);
+            humanScore++;
+        }
+        else if(computerChoice=="scissors"){
+            console.log("You lose! "+computerChoice+" beats "+humanChoice);
+            computerScore++;
+        }
+        else if(computerChoice=="paper"){
+            console.log("Draw! "+humanChoice+" and "+computerChoice);
+        }
+    }
+    else if(humanChoice=="scissors"){
+        if(computerChoice=="paper"){
+            console.log("You win "+humanChoice+" beats "+computerChoice);
+            humanScore++;
+        }
+        else if(computerChoice=="rock"){
+            console.log("You lose! "+computerChoice+" beats "+humanChoice);
+            computerScore++;
+        }
+        else if(computerChoice=="scissors"){
+            console.log("Draw! "+humanChoice+" and "+computerChoice);
+        }
+    }
+}
     // if(humanScore>computerScore){
     //     console.log("You won the game!");
     // }
@@ -76,6 +71,11 @@ function playGame(){
     //     console.log("Game ended as draw!");
     // }
     // console.log("Your score:"+humanScore+" Computer score: "+computerScore);
-}
 
-playGame();
+let btnRock = document.querySelector("#rock");
+let btnPaper = document.querySelector("#paper");
+let btnScissors = document.querySelector("#scissors");
+
+btnRock.addEventListener("click", () => playRound("rock", getComputerChoice()));
+btnPaper.addEventListener("click", () => playRound("paper", getComputerChoice()));
+btnScissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
