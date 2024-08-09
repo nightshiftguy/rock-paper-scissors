@@ -88,6 +88,6 @@ function endGame(){
     else{
         divResult.textContent += "\r\nGame ended as draw!";
     }
-    divResult.textContent += "\r\nYour score:"+humanScore+" Computer score: "+computerScore;
+    divResult.textContent += "\r\nYour score: "+humanScore+" Computer score: "+computerScore;
     gameEnded=true;
 }
