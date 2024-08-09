@@ -21,8 +21,11 @@ let divResult = document.querySelector("#results");
     
 let computerScore=0;
 let humanScore=0;
+let gameEnded=false;
 
 function playRound(humanChoice, computerChoice){
+    if(gameEnded) return;
+
     if(humanChoice=="rock"){
         if(computerChoice=="scissors"){
             divResult.textContent = "You win! "+humanChoice+" beats "+computerChoice;
@@ -62,17 +65,10 @@ function playRound(humanChoice, computerChoice){
             divResult.textContent = "Draw! "+humanChoice+" and "+computerChoice;
         }
     }
+
+    if(humanScore===5)
+        endGame();
 }
-    // if(humanScore>computerScore){
-    //     divResult.textContent = "You won the game!");
-    // }
-    // else if(computerScore>humanScore){
-    //     divResult.textContent = "You lose the game!");
-    // }
-    // else{
-    //     divResult.textContent = "Game ended as draw!");
-    // }
-    // divResult.textContent = "Your score:"+humanScore+" Computer score: "+computerScore);
 
 let btnRock = document.querySelector("#rock");
 let btnPaper = document.querySelector("#paper");
@@ -81,3 +77,17 @@ let btnScissors = document.querySelector("#scissors");
 btnRock.addEventListener("click", () => playRound("rock", getComputerChoice()));
 btnPaper.addEventListener("click", () => playRound("paper", getComputerChoice()));
 btnScissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
+
+function endGame(){
+    if(humanScore>computerScore){
+        divResult.textContent += "\r\nYou won the game!";
+    }
+    else if(computerScore>humanScore){
+        divResult.textContent += "\r\nYou lose the game!";
+    }
+    else{
+        divResult.textContent += "\r\nGame ended as draw!";
+    }
+    divResult.textContent += "\r\nYour score:"+humanScore+" Computer score: "+computerScore;
+    gameEnded=true;
+}
